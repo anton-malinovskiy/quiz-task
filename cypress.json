@@ -1,6 +1,7 @@
 {
   "env": {
     "username": "qa.quiz@nsight.pl",
-    "password": "Test!123"
+    "password": "Test!123",
+    "url": "https://login.poczta.home.pl"
   }
 }

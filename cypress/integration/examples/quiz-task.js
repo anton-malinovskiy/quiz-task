@@ -5,7 +5,7 @@ const loginPage = new LoginPage();
 context('As an admin user I would d like to log in to my email account', () => {
   beforeEach(() => {
     cy.clearCookies()
-    cy.visit('https://login.poczta.home.pl')
+    cy.visit(Cypress.env("url"))
   })
 
   it('should login to mail account with correct credentials', function() {
