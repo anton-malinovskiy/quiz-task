@@ -1,1 +1,6 @@
-{}
+{
+  "env": {
+    "username": "qa.quiz@nsight.pl",
+    "password": "Test!123"
+  }
+}

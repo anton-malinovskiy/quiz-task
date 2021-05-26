@@ -1,3 +1,6 @@
+import { LoginPage } from "../../support/commands";
+
+const loginPage = new LoginPage();
 
 context('As an admin user I would d like to log in to my email account', () => {
   beforeEach(() => {
@@ -5,14 +8,10 @@ context('As an admin user I would d like to log in to my email account', () => {
     cy.visit('https://login.poczta.home.pl')
   })
 
-  it('should login to mail account with correct credentials', () => {
-    cy.get('#username')
-        .type('qa.quiz@nsight.pl')
-    cy.get('#password')
-        .type('Test!123')
-    cy.get('.submit')
-        .click()
-    cy.get('.list-view > [aria-selected="false"]')
-        .click()
+  it('should login to mail account with correct credentials', function() {
+    loginPage.logIn(Cypress.env("username"), Cypress.env("password"))
+
+    cy.get('.submit').click().wait(8000)
+    cy.get('.body').should('be.visible')
   })
 })
